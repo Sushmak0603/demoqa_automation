@@ -5,9 +5,10 @@ Designed with maintainability and extensibility in mind, this framework leverage
 ### ✨ Key Features
 - **Behavior-Driven Development (BDD)** with Behave for clear and collaborative test scenarios.
 - **Page Object Model (POM)** design pattern for better organization and reusability of page elements and actions.
-- **Reusable Page Handlers** to abstract UI logic and reduce redundant code.
+- **Resuable Step Definitions** to minimize redundancy and improve maintainability.
+- **Organized Page Handlers** to abstract UI logic and reduce redundant code.
 - **Dynamic XPath Handling** to avoid hard-coded selectors and improve resilience against UI changes.
-- **Scalability-First Design** ensuring easy expansion with new features, tests or step definitions.
+- **Reusability-First Design** ensuring that all components are designed for reuse across different test cases.
 
 
 ### 💡 Good to haves implemented
@@ -64,22 +65,27 @@ Designed with maintainability and extensibility in mind, this framework leverage
 
 ---
 
-## ⚙️ Pre-requisites
-### ✅ Python Installation
+## ⚙️ Pre-requisites and set up 
+**Disclaimer:** Assuming that **windows** is being used as the OS, below are the pre-requisites to set up the project.
+
+### 1️⃣ Navigate to project directory:
+```bash
+cd demoqa_automation
+```
+### 2️⃣ Python Installation
 Check if **Python 3.8+** is installed. Verify python version by executing:
 ```bash
 python --version
 ```
 
-### ✅ Install any editor like PyCharm
-Download link for PyCharm: https://www.jetbrains.com/pycharm/download/?section=windows
-
----
-
-## 🔧 Set up steps
-### 1️⃣ Set up the Python Interpreter in the editor
-### 2️⃣ Create virtual environment to install packages
-### 3️⃣ Install required packages
+### 3️⃣ Set up virtual environment
+Create a virtual environment to isolate project dependencies:
+```bash
+python -m venv venv  # Create virtual environment
+venv\Scripts\activate.bat  # Activation command
+```
+### 4️⃣ Install required packages
+Make sure you have **pip** installed.
 Run the following command to install required packages:
 ```bash
 pip install -r requirements.txt
@@ -88,11 +94,8 @@ pip install -r requirements.txt
 ---
 
 ## ▶️ Execution steps
-For the ease of execution, python Invoke is used to run the tests.
-Navigate to project directory:
-```bash
-cd demoqa_automation
-```
+For the ease of execution, python **invoke** package is used to run the tests.
+
 ### 🔁 To run all tests
 ```bash
 invoke run-tests
@@ -106,12 +109,34 @@ invoke run-tests --features="features/dynamic_properties.feature"
 invoke run-tests --features="features/forms.feature"
 ```
 
-
-### 📊 To create allure report
+### 📊 To generate allure report
+In order to generate allure report, the **allure CLI** needs to be set up in your system.
+#### ✅ Check if allure CLI is installed
+```bash
+allure --version
+```
+If you see version output, hurray! No additional steps required. Execute the following command to generate allure report.
+#### 🟢 Generate Allure Report
 ```bash
 invoke report
 ```
 
+🔴 If allure CLI is not installed. You could do the following steps to install teh same.
+#### 🛠️ Allure CLI Installation on Windows
+* Download Allure CLI from https://github.com/allure-framework/allure2/releases
+* Download the .zip from the latest release.
+* Extract the ZIP to a permanent folder (e.g., C:\allure)
+* Add to PATH
+* Open Windows search → search Environment Variables
+* Click Environment Variables
+* Under System variables or User variables, find the Path variable → click Edit
+* Add the path to the bin folder inside your extracted allure directory (e.g., C:\allure\bin)
+* Click OK to save everything
+* Verify if allure is installed by opening a **new terminal** and then run the report generation command mentioned **above**.
+
 ---
+### Allure report of Successful execution
+![Allure report of complete execution](Execution_report_snapshot.PNG)!
+
 
 ---
