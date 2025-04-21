@@ -65,8 +65,6 @@ Designed with maintainability and extensibility in mind, this framework leverage
      ├── Execution_report_snapshot.PNG 
 ```
 
-```
-
 ---
 ## 🧩 Traceability Matrix
 
