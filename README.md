@@ -80,7 +80,10 @@ Designed with maintainability and extensibility in mind, this framework leverage
 ## ⚙️ Pre-requisites and set up 
 **Disclaimer:** Assuming that **windows** is being used as the OS, below are the pre-requisites to set up the project.
 
-### 1️⃣ Navigate to project directory:
+### 1️⃣ Clone project repo and navigate to project directory:
+```bash
+git clone https://github.com/Sushmak0603/demoqa_automation.git
+```
 ```bash
 cd demoqa_automation
 ```
