@@ -19,10 +19,10 @@ Feature: Dynamic Property testing
     Then the user navigates to "Dynamic Properties" section under "Elements"
     Then the user should be navigated to a URL containing "demoqa.com/dynamic-properties"
 
-    Scenario: Fluently wait for button with text “Visible after 5 seconds” to be displayed
+    Scenario: Fluently wait for button with text “Visible after 5 seconds” to be displayed (TC003)
       Then the user fluently waits for the button with text "Visible after 5 seconds" to be displayed
 
-    Scenario: Load the page and verify that the second button changes color after some time
+    Scenario: Load the page and verify that the second button changes color after some time (TC004)
       Given the user fetches initial "color" of the button from css property
       And the user polls to wait until the button color changes
       And the user fetches changed "color" of the button from css property

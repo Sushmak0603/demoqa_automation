@@ -50,7 +50,7 @@ def step_impl(context):
                 current_page_count += 1
 
         context.book_details_displayed = book_details_displayed
-        logger.info(f"All book details fetched successfully: {book_details_displayed}")
+        logger.info(f"All book details fetched successfully.")
 
     except Exception as e:
         logger.exception(f"Exception occurred while fetching book details from UI. Exception: {e}")
@@ -61,7 +61,7 @@ def step_impl(context):
     try:
         url = f"{context.base_url}{context.page.book_store.BOOKS_API}"
         logger.info(f"Sending GET request to {url}")
-        response = requests.get(url)
+        response = requests.get(url, verify=False)
         assert response.status_code == 200, f"Bookstore API is not available. Status code: {response.status_code}"
         logger.info("Bookstore API is available and responded with 200")
 
@@ -74,7 +74,7 @@ def step_impl(context, endpoint):
     try:
         url = f"{context.base_url}{endpoint}"
         logger.info(f"Sending GET request to endpoint: {url}")
-        context.response = requests.get(url)
+        context.response = requests.get(url, verify=False)
         logger.info(f"Received response with status code: {context.response.status_code}")
     except Exception as e:
         logger.exception(f"Exception while sending GET request to endpoint.. Exception: {e}")

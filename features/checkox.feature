@@ -20,13 +20,13 @@ Feature: Checkbox Tree testing
     Then the user should be navigated to a URL containing "demoqa.com/checkbox"
     Then the user should be able to see "Home" in the tree node
 
-  Scenario: Dynamically expand the tree at all levels
+  Scenario: Dynamically expand the tree at all levels (TC001)
     Then the user expands the tree at all levels - through expand all (+) button
 
-  Scenario: Tick any parent node and dynamically assert that all nested elements have correct icons
+  Scenario: Tick any parent node and dynamically assert that all nested elements have correct icons (TC002)
     Then the user expands the tree at all levels - through code
     Then the user ticks "WorkSpace" parent node in the tree
-    Then verify if all the descendents of the selected parent node are fully-ticked automatically
+    Then verify if all the descendants of the selected parent node are fully-ticked automatically
     Then verify if all the ancestors of the selected parent node are half-ticked and fully-ticked accordingly
 
 

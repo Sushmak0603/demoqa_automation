@@ -28,6 +28,8 @@ def step_impl(context, field_name, property):
 
         if color != 'rgb(220, 53, 69)':
             logger.error(f"Field '{field_name}' does not have red border. Current color: {color}")
+        else:
+            logger.info(f"Field '{field_name}' has red border")
         assert color == 'rgb(220, 53, 69)'
     except Exception as e:
         logger.exception(f"Border check failed for field '{field_name}': {e}")
@@ -36,14 +38,18 @@ def step_impl(context, field_name, property):
 
 @then('the field options for "{field_name}" should indicate error with "{property}" red')
 def step_impl(context, field_name, property ):
-    logger.info("Verifying red border for Gender radio options")
-    field_id = context.page.forms.field_name_to_id.get(field_name)
-    elements = context.page.base.find_elements(By.XPATH, context.page.forms.GENDER_SIBLING.format(field_id))
-    for element in elements:
-        color = context.page.base.fetch_value_of_css_property(element, property)
-        if color != 'rgba(220, 53, 69, 1)':
-            logger.error(f"Gender option element does not have red border. Current color: {property}")
-        assert color == 'rgba(220, 53, 69, 1)'
+    logger.info(f"Verifying red border for {field_name} options")
+    try:
+        field_id = context.page.forms.field_name_to_id.get(field_name)
+        elements = context.page.base.find_elements(By.XPATH, context.page.forms.GENDER_SIBLING.format(field_id))
+        for element in elements:
+            color = context.page.base.fetch_value_of_css_property(element, property)
+            if color != 'rgba(220, 53, 69, 1)':
+                logger.error(f"Gender option element does not have red border. Current color: {property}")
+            assert color == 'rgba(220, 53, 69, 1)'
+    except Exception as e:
+        logger.exception(f"Border check failed for field '{field_name}': {e}")
+        raise
 
 
 @when('the user enters "{value}" in "{field_name}" field')

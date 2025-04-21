@@ -136,7 +136,7 @@ def step_impl(context):
         raise
 
 
-@then('verify if all the descendents of the selected parent node are fully-ticked automatically')
+@then('verify if all the descendants of the selected parent node are fully-ticked automatically')
 def step_impl(context):
     parent_node = context.selected_node
     try:
