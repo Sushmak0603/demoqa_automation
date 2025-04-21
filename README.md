@@ -57,9 +57,13 @@ Designed with maintainability and extensibility in mind, this framework leverage
 ├── reports   # Folder to capture allure report related details
 │   ├── allure-results/  # Allure results folder
 │   ├── allure-report/   # Allure report folder
+├── .gitignore           # Git ignore file
 ├── requirements.txt  # List of dependencies
 ├── tasks.py  # Invoke tasks for running tests
 ├── README.md          # Project documentation
+└── miscellaneous            # miscellaneous files
+     ├── Execution_report_snapshot.PNG 
+```
 
 ```
 
@@ -165,7 +169,7 @@ invoke report
 
 ---
 ### Allure execution report
-![Allure report of complete execution](Execution_report_snapshot.PNG)
+![Allure report of complete execution](miscellaneous/Execution_report_snapshot.PNG)
 
 
 ---
