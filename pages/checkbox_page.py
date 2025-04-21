@@ -1,0 +1,16 @@
+from .base_page import BasePage
+
+class CheckboxPage(BasePage):
+    MENU_ITEM = "//*[@class = 'group-header']//*[@class = 'header-text' and text() = '{}']/ancestor::span/following-sibling::*[@class = 'element-list collapse show']//*[@class = 'text' and text() = '{}']"
+    TREE_NODE_TEXT = "//*[@class = 'rct-title' and text() = '{}']"
+    COLLAPSE_BUTTON = "//*[@class='check-box-tree-wrapper']//*[@class = 'rct-node rct-node-parent rct-node-collapsed']//*[@class = 'rct-collapse rct-collapse-btn']"
+    PARENT_NODE_CHECKBOX = "//*[@class='rct-node rct-node-parent rct-node-expanded']/span/label/span[@class = 'rct-checkbox']"
+    CHECKBOX_RELATIVE_ELEMENT_FOR_TEXT = "/following-sibling::*[@class='rct-title']"
+    PARENT_NODE_CHECKBOX_FOR_GIVEN_TEXT = "//*[@class='rct-title' and text() = '{}'] /preceding-sibling::*[@class = 'rct-checkbox' ]"
+    ALL_NESTED_ELEMENTS_CHECKED = "//*[@class='rct-title' and text() = '{}'] /ancestor::*[@class = 'rct-text'][1]/following-sibling::*//*[@class= 'rct-icon rct-icon-check']"
+    DESCENDENT_NODES_FOR_GIVEN_PARENT_NODE= "//*[@class='rct-title' and text() = '{}'] /ancestor::*[@class = 'rct-text'][1]/following-sibling::*//*[@class = 'rct-title']"
+    IS_CHECKED = "//*[@class='rct-title' and text() = '{}']/preceding-sibling::*[@class = 'rct-checkbox']/*[@class = 'rct-icon rct-icon-check']"
+    HALF_CHECKED = "//*[@class='rct-title' and text() = '{}']/preceding-sibling::*[@class = 'rct-checkbox']/*[@class = 'rct-icon rct-icon-half-check']"
+    PARENT_NODE_OF_GIVEN_NODE = "//*[@class = 'rct-title' and text() = '{}']/ancestor::ol[1]/preceding-sibling::*//*[@class = 'rct-title']"
+    ALL_CHILDREN_OF_GIVEN_NODE = "//*[@class = 'rct-title' and text() = '{}']/ancestor::span[@class = 'rct-text']/following-sibling::*/li/span//*[@class = 'rct-title']"
+    EXPAND_ALL_BUTTON = "//*[@class='rct-option rct-option-expand-all']"
