@@ -14,3 +14,4 @@ class CheckboxPage(BasePage):
     PARENT_NODE_OF_GIVEN_NODE = "//*[@class = 'rct-title' and text() = '{}']/ancestor::ol[1]/preceding-sibling::*//*[@class = 'rct-title']"
     ALL_CHILDREN_OF_GIVEN_NODE = "//*[@class = 'rct-title' and text() = '{}']/ancestor::span[@class = 'rct-text']/following-sibling::*/li/span//*[@class = 'rct-title']"
     EXPAND_ALL_BUTTON = "//*[@class='rct-option rct-option-expand-all']"
+    LEAF_NODE_ITEM = "//*[@class = 'rct-title' and text() = '{}']/ancestor::li[contains(@class, 'rct-node-leaf')][1]"
