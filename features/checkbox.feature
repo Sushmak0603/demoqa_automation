@@ -23,11 +23,17 @@ Feature: Checkbox Tree testing
   Scenario: Dynamically expand the tree at all levels (TC001)
     Then the user expands the tree at all levels - through expand all (+) button
 
-  Scenario: Tick any parent node and dynamically assert that all nested elements have correct icons (TC002)
+  Scenario: Tick any PARENT node and dynamically assert that all nested elements have correct icons (TC002)
     Then the user expands the tree at all levels - through code
     Then the user ticks "WorkSpace" parent node in the tree
     Then verify if all the descendants of the selected parent node are fully-ticked automatically
     Then verify if all the ancestors of the selected parent node are half-ticked and fully-ticked accordingly
+
+  Scenario: Tick ANY number of PARENT nodes and dynamically assert that all elements of the tree are fully-ticked, half-ticked and un-ticked accordingly (TC009)
+    Then the user expands the tree at all levels - through expand all (+) button
+    Then the user ticks "WorkSpace" parent node in the tree
+    Then the user ticks "Documents" parent node in the tree
+    Then verify if all the nodes of the tree are fully-ticked, half-ticked and un-ticked accordingly based on selected nodes
 
 
 
