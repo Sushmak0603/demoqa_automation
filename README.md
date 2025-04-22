@@ -68,14 +68,14 @@ Designed with maintainability and extensibility in mind, this framework leverage
 ---
 ## 🧩 Traceability Matrix
 
-| Requirement ID | Description                                                                                                                 | Test Case ID | 🟢 Additional detailing covered in test cases                                                                                                                        |
-|----------------|-----------------------------------------------------------------------------------------------------------------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| REQ-1.a        | **Navigate to Elements > Checkbox**. Dynamically expand the tree at all levels.                                             | TC001        | Expands the tree through (+) icon                                                                                                                                    |
-| REQ-1.b        | Tick a parent node (of your choosing) and dynamically assert that all nested elements have correct icons                    | TC002        | Expands the tree through arrow icons through code. Works for any **parent** node in the tree. Validates both **fully-ticked** and **half-ticked** nodes accordingly. |
-| REQ-2.a        | **Navigate to Elements > Dynamic Properties**. Fluently wait for button with text “Visible after 5 seconds” to be displayed | TC003        | Explicit waits through polling                                                                                                                                       |
-| REQ-2.b        | Load the page and verify that the second button changes color after some time                                               | TC004        | Validation of CSS color property along with waits                                                                                                                    |
-| REQ-3          | **Navigate to Forms > Practice Forms**.Identify and implement 1-2 test scenarios to test field validatio                    | TC005, TC006, TC007 | Covered positive and negative scenarios for, mandatory form fields,  Mobile number field and Email-ID field. Also ID look-up table implemented.                      |
-| REQ-4         | **Navigate to Book Store Application** Look at the list of books and use the api to validate the correctness of the data displayed on the book store page        | TC008       | Pagination handled. Works even when records are spread over multiple pages. Dynamically compares between displayed books through UI and that fetched from API.       |
+| Requirement ID | Description                                                                                                                 | Test Case ID        | 🟢 Additional detailing covered in test cases                                                                                                                                       |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| REQ-1.a        | **Navigate to Elements > Checkbox**. Dynamically expand the tree at all levels.                                             | TC001               | Expands the tree through (+) icon                                                                                                                                                   |
+| REQ-1.b        | Tick a parent node (of your choosing) and dynamically assert that all nested elements have correct icons                    | TC002, TC009        | Expands the tree through arrow icons through code. Works for any **parent** node in the tree. Validates both **fully-ticked**, **half-ticked** and **un-ticked** nodes accordingly. |
+| REQ-2.a        | **Navigate to Elements > Dynamic Properties**. Fluently wait for button with text “Visible after 5 seconds” to be displayed | TC003               | Explicit waits through polling                                                                                                                                                      |
+| REQ-2.b        | Load the page and verify that the second button changes color after some time                                               | TC004               | Validation of CSS color property along with waits                                                                                                                                   |
+| REQ-3          | **Navigate to Forms > Practice Forms**.Identify and implement 1-2 test scenarios to test field validatio                    | TC005, TC006, TC007 | Covered positive and negative scenarios for, mandatory form fields,  Mobile number field and Email-ID field. Also ID look-up table implemented.                                     |
+| REQ-4         | **Navigate to Book Store Application** Look at the list of books and use the api to validate the correctness of the data displayed on the book store page        | TC008               | Pagination handled. Works even when records are spread over multiple pages. Dynamically compares between displayed books through UI and that fetched from API.                      |
 
 ## ⚙️ Pre-requisites and set up 
 **Disclaimer:** Assuming that **windows** is being used as the OS, below are the pre-requisites to set up the project.
@@ -155,7 +155,7 @@ If you see version output, hurray! No additional steps required. Execute the fol
 invoke report
 ```
 
-🔴 If allure CLI is not installed. You could do the following steps to install teh same.
+🔴 If allure CLI is not installed. You could do the following steps to install the same.
 #### 🛠️ Allure CLI Installation on Windows
 * Download Allure CLI from https://github.com/allure-framework/allure2/releases
 * Download the .zip from the latest release.
